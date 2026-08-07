@@ -22,7 +22,7 @@ check_present() {
 # Banned content: no sync/mobile mentions, no Inter font, no fake metrics language
 check_absent "sync"
 check_absent "mobile app"
-check_absent "font-family: 'Inter'"
+check_absent "font-family:[^;]*inter"
 check_absent "10x"
 check_absent "testimonial"
 
