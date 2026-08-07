@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlaceholderBlock from '../components/PlaceholderBlock.astro';
+---
+<BaseLayout title="Download — Heartwood">
+  <section class="download">
+    <h1>Download Heartwood</h1>
+    <p>Local-first. No accounts, no telemetry, no cloud.</p>
+
+    <div class="download__grid">
+      <article class="download__card">
+        <h2>macOS</h2>
+        <a class="download__button" href="#" aria-disabled="true">Coming soon</a>
+      </article>
+      <article class="download__card">
+        <h2>Windows</h2>
+        <a class="download__button" href="#" aria-disabled="true">Coming soon</a>
+      </article>
+      <article class="download__card">
+        <h2>Linux</h2>
+        <a class="download__button" href="#" aria-disabled="true">Coming soon</a>
+      </article>
+    </div>
+
+    <PlaceholderBlock
+      label="System requirements go here"
+      note="Minimum OS versions and hardware requirements will be listed once builds are finalized."
+    />
+  </section>
+</BaseLayout>
+
+<style>
+  .download {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+  }
+  .download__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    margin: var(--space-4) 0 var(--space-6) 0;
+  }
+  .download__card {
+    flex: 1 1 12rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-3);
+    background: var(--color-bg-alt);
+  }
+  .download__button {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 4px;
+    background: var(--color-border);
+    color: var(--color-ink);
+    text-decoration: none;
+    cursor: default;
+  }
+</style>
