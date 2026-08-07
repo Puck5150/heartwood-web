@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="About — Heartwood">
+  <section class="mission">
+    <blockquote>
+      Attention doesn't move in a straight line, and Heartwood isn't built
+      to fight that. When your mind wanders, you set the thought down
+      instead of losing the fight against it — and nothing set down here
+      is wasted. It becomes structure: quiet, load-bearing, holding up
+      whatever comes next. Step away when focus runs dry. That's not
+      empty time — it's water. What you've set down takes root in it.
+    </blockquote>
+  </section>
+
+  <section class="metaphor">
+    <h2>Heartwood</h2>
+    <p>
+      In a living tree, the oldest growth at the center eventually stops
+      being active. It stops carrying water, stops growing — and becomes
+      the heartwood: dense, still, and load-bearing. It's what holds the
+      rest of the tree up.
+    </p>
+    <p>
+      That's what happens to a thought you set down in the Greenhouse. It
+      stops pulling at your attention. It doesn't disappear — it becomes
+      part of the structure you're standing on.
+    </p>
+  </section>
+
+  <section class="privacy">
+    <h2>Why local-first</h2>
+    <p>
+      Heartwood doesn't have an account system, because it doesn't need
+      one. There's no telemetry, no analytics phoning home, no cloud
+      sync, no ads. Everything you type — every captured thought, every
+      session note — stays on your machine, in files you can read without
+      Heartwood at all.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .mission, .metaphor, .privacy {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-4);
+  }
+  .mission blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+</style>
