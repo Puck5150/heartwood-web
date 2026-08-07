@@ -5,18 +5,33 @@
   --color-accent: #8B5A3C;
   --color-accent-secondary: #B5613C;
   --color-border: #DDD2BE;
+  --color-ring: #C9A98A;
 
   --font-heading: 'Fraunces', Georgia, serif;
   --font-body: 'Public Sans', -apple-system, sans-serif;
+
+  --text-display: clamp(2.75rem, 1.75rem + 4vw, 4.5rem);
+  --text-h1: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  --text-h2: clamp(1.375rem, 1.2rem + 0.7vw, 1.625rem);
+  --text-lead: 1.1875rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+
+  --tracking-heading: -0.01em;
+  --tracking-display: -0.02em;
 
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2rem;
+  --space-5: 2.5rem;
   --space-6: 4rem;
+  --space-7: 5rem;
   --space-8: 6rem;
 
   --breakpoint-stack: 700px;
+
+  --shadow-lifted: 0 20px 40px -20px rgba(139, 90, 60, 0.35), 0 4px 10px -4px rgba(139, 90, 60, 0.18);
 }
 
 * { box-sizing: border-box; }
@@ -27,17 +42,34 @@ html, body {
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: 500;
+  letter-spacing: var(--tracking-heading);
   line-height: 1.15;
+  text-wrap: balance;
   margin: 0 0 var(--space-2) 0;
 }
 
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+
 a { color: var(--color-accent); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 :focus-visible {
   outline: 2px solid var(--color-accent);

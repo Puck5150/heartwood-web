@@ -18,9 +18,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </article>
 
       <article class="plan plan--full">
+        <p class="plan__badge">Early adopter</p>
         <h2>Full version</h2>
         <p class="plan__price">$19 one-time</p>
-        <p class="plan__subnote">Early adopter price — rising to $29 at 1.0.</p>
+        <p class="plan__subnote">Rising to $29 at 1.0.</p>
         <ul>
           <li>All soundscapes</li>
           <li>Versioned history</li>
@@ -40,41 +41,71 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .pricing {
     max-width: 48rem;
     margin: 0 auto;
-    padding: var(--space-6) var(--space-4);
+    padding: var(--space-7) var(--space-4) var(--space-6);
     text-align: center;
   }
   .plans {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-4);
+    gap: var(--space-5);
     justify-content: center;
-    margin-top: var(--space-4);
+    align-items: flex-start;
+    margin-top: var(--space-5);
     text-align: left;
   }
   .plan {
     flex: 1 1 18rem;
     border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: var(--space-4);
+    border-radius: 6px;
+    padding: var(--space-5) var(--space-4);
     background: var(--color-bg-alt);
   }
+  .plan--full {
+    position: relative;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg-alt));
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-lifted);
+  }
+  .plan__badge {
+    display: inline-block;
+    margin: 0 0 var(--space-2) 0;
+    padding: 0.2em 0.7em;
+    font-size: var(--text-small);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-bg);
+    background: var(--color-accent-secondary);
+    border-radius: 100px;
+  }
+  .plan h2 {
+    font-size: 1.375rem;
+  }
   .plan__price {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-family: var(--font-heading);
+    letter-spacing: var(--tracking-heading);
     margin: 0 0 var(--space-1) 0;
   }
   .plan__subnote {
-    font-size: 0.875rem;
-    opacity: 0.8;
-    margin: 0 0 var(--space-2) 0;
+    font-size: var(--text-small);
+    opacity: 0.75;
+    margin: 0 0 var(--space-3) 0;
+  }
+  .plan ul {
+    margin: 0;
+    padding-left: 1.1em;
+  }
+  .plan li + li {
+    margin-top: var(--space-1);
   }
   .plan__note {
-    font-size: 0.875rem;
-    opacity: 0.8;
+    font-size: var(--text-small);
+    opacity: 0.75;
+    margin-top: var(--space-3);
   }
   .pricing__footnote {
-    margin-top: var(--space-4);
-    opacity: 0.8;
+    margin-top: var(--space-5);
+    opacity: 0.75;
   }
   @media (max-width: 700px) {
     .plans { flex-direction: column; }
