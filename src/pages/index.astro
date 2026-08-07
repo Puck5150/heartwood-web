@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GreenhouseDemo from '../components/GreenhouseDemo.astro';
+import PlaceholderBlock from '../components/PlaceholderBlock.astro';
+---
+<BaseLayout title="Heartwood — A focus timer for a mind that wanders">
+  <section class="hero">
+    <div class="hero__copy">
+      <h1>A place to set your mind down.</h1>
+      <p>
+        Heartwood is a focus timer for macOS, Windows, and Linux. When a
+        thought pulls at you mid-session, you capture it in the Greenhouse
+        and keep working — nothing is lost, nothing has to be decided
+        right now.
+      </p>
+    </div>
+    <GreenhouseDemo />
+  </section>
+
+  <section class="recording">
+    <PlaceholderBlock
+      label="Real session recording goes here"
+      note="A short screen recording of an actual Heartwood session will replace this block."
+    />
+  </section>
+
+  <section class="local-first">
+    <h2>Everything stays on your machine.</h2>
+    <p>No accounts. No telemetry. No ads. No cloud. Heartwood runs locally and stores everything you write locally — full stop.</p>
+  </section>
+
+  <section class="features">
+    <h2>What else is here</h2>
+    <ul>
+      <li><strong>Soundscapes</strong> — one included free, more with the full version.</li>
+      <li><strong>Touch grass</strong> — a deliberate extended-break button, for when focus runs dry.</li>
+      <li><strong>Markdown session notes</strong> — write plainly, format if you want to.</li>
+      <li><strong>Versioned history</strong> — everything you've ever written, kept.</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <a class="cta__button" href="/download">Download Heartwood</a>
+    <a class="cta__link" href="/pricing">See pricing</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+  .hero__copy {
+    flex: 1 1 22rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero, .recording, .local-first, .features, .cta {
+    padding: var(--space-4);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .local-first {
+    text-align: center;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+  .features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .cta {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-8);
+  }
+  .cta__button {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    padding: var(--space-2) var(--space-4);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cta__link {
+    color: var(--color-ink);
+  }
+  @media (max-width: 700px) {
+    .hero { flex-direction: column; }
+  }
+</style>

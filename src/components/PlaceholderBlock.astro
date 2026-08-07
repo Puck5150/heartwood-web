@@ -1,0 +1,32 @@
+---
+interface Props {
+  label: string;
+  note?: string;
+}
+const { label, note } = Astro.props as Props;
+---
+<div class="placeholder" role="note" aria-label={label}>
+  <p class="placeholder__label">{label}</p>
+  {note && <p class="placeholder__note">{note}</p>}
+</div>
+
+<style>
+  .placeholder {
+    border: 2px dashed var(--color-border);
+    background: var(--color-bg-alt);
+    border-radius: 4px;
+    padding: var(--space-4);
+    text-align: center;
+    color: var(--color-ink);
+  }
+  .placeholder__label {
+    font-weight: 600;
+    margin: 0 0 var(--space-1) 0;
+  }
+  .placeholder__note {
+    margin: 0;
+    font-style: italic;
+    opacity: 0.75;
+    font-size: 0.9rem;
+  }
+</style>

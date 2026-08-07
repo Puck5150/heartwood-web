@@ -1,0 +1,77 @@
+<div class="greenhouse-demo">
+  <label class="greenhouse-demo__label" for="greenhouse-input">
+    Try it — set a thought down
+  </label>
+  <input
+    id="greenhouse-input"
+    class="greenhouse-demo__input"
+    type="text"
+    placeholder="e.g. did I lock the back door?"
+    autocomplete="off"
+  />
+  <ul class="greenhouse-demo__list" id="greenhouse-list" aria-live="polite"></ul>
+</div>
+
+<script>
+  import { prepareCapture } from '../lib/greenhouseCapture.js';
+
+  const input = document.getElementById('greenhouse-input');
+  const list = document.getElementById('greenhouse-list');
+
+  input?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter') return;
+    const captured = prepareCapture(input.value);
+    if (!captured) return;
+
+    const item = document.createElement('li');
+    item.textContent = captured;
+    item.className = 'greenhouse-demo__item';
+    list?.prepend(item);
+    input.value = '';
+  });
+</script>
+
+<style>
+  .greenhouse-demo {
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    padding: var(--space-3);
+    max-width: 28rem;
+  }
+  .greenhouse-demo__label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-1);
+  }
+  .greenhouse-demo__input {
+    width: 100%;
+    padding: var(--space-2);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+  .greenhouse-demo__list {
+    list-style: none;
+    margin: var(--space-2) 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+</style>
+
+<style is:global>
+  #greenhouse-list .greenhouse-demo__item {
+    padding: var(--space-1) var(--space-2);
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-bg);
+    animation: settle 0.3s ease-out;
+  }
+  @keyframes settle {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
