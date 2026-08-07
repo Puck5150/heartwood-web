@@ -11,9 +11,9 @@ describe('prepareCapture', () => {
     expect(prepareCapture('')).toBeNull();
   });
 
-  it('truncates to 140 characters', () => {
-    const long = 'a'.repeat(200);
+  it('truncates to 140 characters, keeping the prefix', () => {
+    const long = 'a'.repeat(140) + 'b'.repeat(60);
     const result = prepareCapture(long);
-    expect(result.length).toBe(140);
+    expect(result).toBe('a'.repeat(140));
   });
 });

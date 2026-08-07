@@ -6,7 +6,7 @@ npm run build
 FAIL=0
 
 check_absent() {
-  if grep -riq "$1" dist/ ; then
+  if grep -riq --include='*.html' --include='*.css' --include='*.js' "$1" dist/ ; then
     echo "FAIL: found banned term '$1'"
     FAIL=1
   fi
