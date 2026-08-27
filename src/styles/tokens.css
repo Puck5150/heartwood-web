@@ -22,8 +22,8 @@
   --color-break-surface: #22342E;
   --color-ink: #F0F3F8;
   --color-ink-muted: #B2BBC8;
-  --color-accent: #E9A467;
-  --color-accent-secondary: #73C991;
+  --color-accent: #73C991;
+  --color-accent-secondary: #E9A467;
   --color-border: #414B5B;
   --color-focus: #79B8E8;
   --color-ring: #957860;
@@ -55,7 +55,7 @@
 
   --breakpoint-stack: 700px;
 
-  --shadow-lifted: 0 20px 40px -20px rgba(233, 164, 103, 0.25), 0 4px 10px -4px rgba(0, 0, 0, 0.4);
+  --shadow-lifted: 0 20px 40px -20px rgba(115, 201, 145, 0.25), 0 4px 10px -4px rgba(0, 0, 0, 0.4);
   --shadow-card: 0 8px 24px -8px rgba(0, 0, 0, 0.5);
 
   color-scheme: dark;

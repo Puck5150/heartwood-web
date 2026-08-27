@@ -9,8 +9,8 @@ colors:
   break-surface: "#22342E"
   ink: "#F0F3F8"
   ink-muted: "#B2BBC8"
-  accent: "#E9A467"
-  accent-secondary: "#73C991"
+  accent: "#73C991"
+  accent-secondary: "#E9A467"
   border: "#414B5B"
   focus: "#79B8E8"
   ring: "#957860"
@@ -75,24 +75,24 @@ components:
 
 This site does not invent a brand — it borrows one, deliberately. `heartwood-app` (the desktop product this site sells) already has a real, tested visual identity: seven named theme families with self-hosted type and semantic color tokens. The marketing site exists to make visitors trust the app, so it wears the app's actual Night Walk/Dark theme rather than running a separate design exercise next to it. The two should feel like the same object seen from two rooms.
 
-Navy dark, amber accent, one self-hosted display serif carried over byte-for-byte from the app's own font file. No gradients, no stock imagery, no icon rows. The dark ground reinforces the site's actual message — flow, immersion, staying inside the work — more directly than the earlier warm-paper direction did: this is what the room looks like when you're still in it, not describing it from outside. Whitespace and typography do almost all of the work; the one recurring motif (concentric growth rings) is spent exactly once, on the About page, where the "heartwood" metaphor is the actual subject.
+Navy dark, moss-green accent, one self-hosted display serif carried over byte-for-byte from the app's own font file. No gradients, no stock imagery, no icon rows. The dark ground reinforces the site's actual message — flow, immersion, staying inside the work — more directly than the earlier warm-paper direction did: this is what the room looks like when you're still in it, not describing it from outside. Whitespace and typography do almost all of the work; the one recurring motif (concentric growth rings) is spent exactly once, on the About page, where the "heartwood" metaphor is the actual subject.
 
 **Key Characteristics:**
 - Sourced, not invented: every hex value traces to `heartwood-app/src/app.css`'s Night Walk/Dark block.
-- Restrained on background/surface, Committed on two whole-section color washes carrying product meaning (warm amber-brown = focus, green = rest/trust).
+- Restrained on background/surface, Committed on two whole-section color washes carrying product meaning (warm amber-brown = focus, green = rest/trust) — independent of which color the site treats as its primary accent (see Colors below).
 - One motif, spent once, at full size, where the words are literally about it.
 - Zero third-party font network requests — the display face is self-hosted, the body face is the OS's own system stack.
 - Flow/immersion is the lead claim, demonstrated by the Greenhouse mechanic; local-first is a real, durable, but supporting fact — present everywhere (features list, footer), never a dedicated section.
 
 ## Colors
 
-Near-black navy carries the page; the amber accent and the two surface tints do the work of section rhythm, not decoration.
+Near-black navy carries the page; the moss-green accent and the two surface tints do the work of section rhythm, not decoration.
 
 ### Primary
-- **Amber** (`#E9A467`): the site's one true accent — links, the CTA band's fill, nav active/hover state. Same hex as the app's `--flow-accent` in Night Walk/Dark.
+- **Moss** (`#73C991`): the site's one true accent — links, the CTA band's fill, nav active/hover state. Same hex as the app's `--break-accent` in Night Walk/Dark. (User-directed swap from the original Amber-primary choice — the app's own tokens are unchanged; the site now simply picks its primary/secondary roles from the other end.)
 
 ### Secondary
-- **Moss** (`#73C991`): used once as the "Early adopter" pricing badge. Same hex as the app's `--break-accent` (its rest/trust state color) in Night Walk/Dark — a deliberate, sparing echo, not a second brand color competing with amber.
+- **Amber** (`#E9A467`): used once as the "Early adopter" pricing badge. Same hex as the app's `--flow-accent` (its focus/on-task state color) in Night Walk/Dark — a deliberate, sparing echo, not a second brand color competing with moss.
 
 ### Neutral
 - **Night** (`#141922`): page background.
@@ -103,13 +103,13 @@ Near-black navy carries the page; the amber accent and the two surface tints do 
 - **Fog** (`#F0F3F8`): body text.
 - **Faded Fog** (`#B2BBC8`): secondary/muted text.
 - **Border** (`#414B5B`): hairlines, card edges, input borders.
-- **Focus Blue** (`#79B8E8`): the dedicated keyboard-focus outline color — genuinely distinct from the amber accent in this theme (unlike Cozy, where they happened to share a hex). Scoped to Night (`#141922`) instead inside the CTA band, where blue-on-amber would read poorly.
+- **Focus Blue** (`#79B8E8`): the dedicated keyboard-focus outline color — genuinely distinct from either accent in this theme (unlike Cozy, where focus-ring and flow-accent happened to share a hex). Scoped to Night (`#141922`) instead inside the CTA band, where blue-on-moss would read poorly.
 - **Ring Tint** (`#957860`): the tree-rings motif's fainter strokes only — not used anywhere else.
 
 ### Named Rules
 **The Two-Surface Rule.** Only two background washes ever fill a whole section — Kindled (warm) for focus/on-task moments, Mossed (green) for rest/trust moments. A third wash color would dilute both into decoration.
 
-**The Real Focus-Ring Rule.** Don't assume a theme's focus color equals its accent color just because a prior theme's did. Night Walk's focus-ring (blue) and flow-accent (amber) are genuinely different colors in the app's own tokens — the site now carries a dedicated `--color-focus` for exactly this reason.
+**The Real Focus-Ring Rule.** Don't assume a theme's focus color equals its accent color just because a prior theme's did. Night Walk's focus-ring (blue) is a genuinely different color from either of its accent tokens (flow-accent amber, break-accent moss) — the site carries a dedicated `--color-focus` for exactly this reason, independent of which accent the site treats as primary.
 
 ## Typography
 
@@ -137,11 +137,11 @@ Four thin pages sharing one `BaseLayout`; each section is either full-bleed (col
 
 ## Elevation & Depth
 
-Two shadow tokens, both flat-by-default with an offset and soft blur. In dark mode, depth reads primarily through surface-lightness steps (Night → Near-Night → Deep Slate), not shadow alone — a pure black shadow barely registers against an already-near-black ground, so the Lifted tier adds a faint amber glow specifically so the highlighted pricing card still reads as raised.
+Two shadow tokens, both flat-by-default with an offset and soft blur. In dark mode, depth reads primarily through surface-lightness steps (Night → Near-Night → Deep Slate), not shadow alone — a pure black shadow barely registers against an already-near-black ground, so the Lifted tier adds a faint moss-green glow (matching the primary accent) specifically so the highlighted pricing card still reads as raised.
 
 ### Shadow Vocabulary
 - **Card** (`box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5)`): pricing cards, download cards — pure black, matching the app's own dark-mode shadow token exactly.
-- **Lifted** (`box-shadow: 0 20px 40px -20px rgba(233, 164, 103, 0.25), 0 4px 10px -4px rgba(0, 0, 0, 0.4)`): the highlighted "Full version" pricing tier only — an amber glow layered over a black depth shadow, since a colorless shadow alone doesn't read as "raised" against a near-black ground.
+- **Lifted** (`box-shadow: 0 20px 40px -20px rgba(115, 201, 145, 0.25), 0 4px 10px -4px rgba(0, 0, 0, 0.4)`): the highlighted "Full version" pricing tier only — a moss glow layered over a black depth shadow, since a colorless shadow alone doesn't read as "raised" against a near-black ground.
 
 ### Named Rules
 **The One Elevation Step Rule.** Nothing on the site uses more than two shadow strengths. A third would turn "the recommended plan" into "everything is trying to float."
@@ -154,15 +154,15 @@ Soft, small radii throughout (3–8px) — never sharp, never pill-shaped except
 
 ### Buttons
 - **Shape:** 4px radius (`{rounded.sm}`).
-- **Primary (in-context, e.g. nav):** amber text, no fill.
-- **Primary (CTA band):** inverted — Night (navy) fill, amber text; `transform: translateY(-2px)` on hover, no color change.
-- **Focus:** 2px solid outline in Focus Blue everywhere except inside the CTA band, where it's scoped to Night so the ring stays visible and legible against the amber fill (blue-on-amber reads poorly; navy-on-amber reads clean).
+- **Primary (in-context, e.g. nav):** moss text, no fill.
+- **Primary (CTA band):** inverted — Night (navy) fill, moss text; `transform: translateY(-2px)` on hover, no color change.
+- **Focus:** 2px solid outline in Focus Blue everywhere except inside the CTA band, where it's scoped to Night so the ring stays visible and legible against the moss fill (blue-on-moss reads poorly; navy-on-moss reads clean).
 
 ### Cards / Containers
 - **Corner Style:** 6px radius (`{rounded.md}`).
 - **Background:** Near-Night by default; Kindled Surface for the one highlighted pricing tier.
 - **Shadow Strategy:** Card by default, Lifted for the highlighted tier (see Elevation & Depth).
-- **Border:** 1px Border, Amber for the highlighted tier.
+- **Border:** 1px Border, Moss for the highlighted tier.
 
 ### Inputs / Fields
 - **Style:** 4px radius, 1px Border stroke, Night background sitting on top of whatever surface wash contains it.
@@ -172,11 +172,11 @@ Soft, small radii throughout (3–8px) — never sharp, never pill-shaped except
 ### Navigation
 - **Style:** wordmark left (Young Serif), three text links right, no icons, no login (nothing to log into).
 - **Default:** Fog text, no underline.
-- **Hover / Active:** Amber text plus a 2px underline that grows from the left (`transform: scaleX()`), the active page's underline held permanently via `aria-current="page"` rather than a separate visual language.
+- **Hover / Active:** Moss text plus a 2px underline that grows from the left (`transform: scaleX()`), the active page's underline held permanently via `aria-current="page"` rather than a separate visual language.
 - **Mobile (<700px):** stacks to wordmark, then links wrap below; nav stays sticky at the top regardless of breakpoint.
 
 ### Tree Rings (signature component)
-Six concentric circles, hand-authored inline SVG, alternating Amber and Ring Tint strokes at low opacity (0.2–0.55). Appears exactly once, centered behind the About page's mission-statement blockquote — never repeated as a page-wide pattern. A two-layer `radial-gradient` ring-and-dot glyph echoes the same idea in miniature as the list-bullet mark (Landing features, Greenhouse captured items).
+Six concentric circles, hand-authored inline SVG, alternating Moss and Ring Tint strokes at low opacity (0.2–0.55). Appears exactly once, centered behind the About page's mission-statement blockquote — never repeated as a page-wide pattern. A two-layer `radial-gradient` ring-and-dot glyph echoes the same idea in miniature as the list-bullet mark (Landing features, Greenhouse captured items).
 
 ## Do's and Don'ts
 
@@ -184,7 +184,7 @@ Six concentric circles, hand-authored inline SVG, alternating Amber and Ring Tin
 - **Do** source every color and font from `heartwood-app/src/app.css` and its font asset before inventing anything new — this site's whole visual authority is "we are the same product," not independent taste.
 - **Do** use Kindled Surface for focus/on-task content (the Greenhouse demo, the "Flow is the point" section, the highlighted pricing tier) and Mossed Surface for rest/trust content (the About metaphor) — the mapping is semantic, not decorative rotation.
 - **Do** keep Young Serif to headings and the mission quote only; body copy stays on the system sans stack.
-- **Do** give every interactive element the same 2px solid Focus Blue outline (scoped to Night only inside the amber CTA band).
+- **Do** give every interactive element the same 2px solid Focus Blue outline (scoped to Night only inside the moss CTA band).
 - **Do** keep local-first present on every page (features list, footer) without giving it a dedicated section — it's a real fact, not the lead claim.
 
 ### Don't:
