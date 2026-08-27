@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GreenhouseDemo from '../components/GreenhouseDemo.astro';
 import PlaceholderBlock from '../components/PlaceholderBlock.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout title="Heartwood — A focus timer for a mind that wanders">
   <section class="hero">
@@ -42,8 +43,8 @@ import PlaceholderBlock from '../components/PlaceholderBlock.astro';
   </section>
 
   <section class="cta reveal">
-    <a class="cta__button" href="/download">Download Heartwood</a>
-    <a class="cta__link" href="/pricing">See pricing</a>
+    <a class="cta__button" href={`${base}/download`}>Download Heartwood</a>
+    <a class="cta__link" href={`${base}/pricing`}>See pricing</a>
   </section>
 </BaseLayout>
 

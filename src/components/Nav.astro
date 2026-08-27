@@ -1,16 +1,17 @@
 ---
-const path = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const path = Astro.url.pathname.replace(/\/$/, '');
 const links = [
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/about', label: 'About' },
-  { href: '/download', label: 'Download' },
+  { href: `${base}/pricing`, label: 'Pricing' },
+  { href: `${base}/about`, label: 'About' },
+  { href: `${base}/download`, label: 'Download' },
 ];
 ---
 <nav class="nav">
-  <a class="nav__wordmark" href="/">Heartwood</a>
+  <a class="nav__wordmark" href={`${base}/`}>Heartwood</a>
   <div class="nav__links">
     {links.map((link) => (
-      <a href={link.href} aria-current={path === link.href ? 'page' : undefined}>{link.label}</a>
+      <a href={link.href} aria-current={path === link.href.replace(/\/$/, '') ? 'page' : undefined}>{link.label}</a>
     ))}
   </div>
 </nav>
