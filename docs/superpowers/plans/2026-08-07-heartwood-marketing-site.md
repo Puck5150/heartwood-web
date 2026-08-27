@@ -38,7 +38,7 @@
 - Consumes: nothing (first task).
 - Produces: CSS custom properties in `tokens.css` — `--color-bg`, `--color-bg-alt`, `--color-ink`, `--color-accent`, `--color-accent-secondary`, `--color-border`, `--font-heading`, `--font-body`, `--space-1` through `--space-8`, `--breakpoint-stack: 700px`. Later tasks import this file via `import '../styles/tokens.css'` (or link in `BaseLayout`) and use these variable names verbatim.
 
-- [ ] **Step 1: Write `package.json`**
+- [x] **Step 1: Write `package.json`**
 
 ```json
 {
@@ -63,7 +63,7 @@
 }
 ```
 
-- [ ] **Step 2: Write `astro.config.mjs`**
+- [x] **Step 2: Write `astro.config.mjs`**
 
 ```js
 import { defineConfig } from 'astro/config';
@@ -73,7 +73,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 3: Write `tsconfig.json`**
+- [x] **Step 3: Write `tsconfig.json`**
 
 ```json
 {
@@ -81,7 +81,7 @@ export default defineConfig({
 }
 ```
 
-- [ ] **Step 4: Write `.gitignore`**
+- [x] **Step 4: Write `.gitignore`**
 
 ```
 node_modules/
@@ -89,7 +89,7 @@ dist/
 .astro/
 ```
 
-- [ ] **Step 5: Write `src/styles/tokens.css`**
+- [x] **Step 5: Write `src/styles/tokens.css`**
 
 ```css
 :root {
@@ -139,7 +139,7 @@ a { color: var(--color-accent); }
 }
 ```
 
-- [ ] **Step 6: Write a temporary minimal `src/pages/index.astro` to prove the build pipeline**
+- [x] **Step 6: Write a temporary minimal `src/pages/index.astro` to prove the build pipeline**
 
 ```astro
 ---
@@ -159,7 +159,7 @@ import '../styles/tokens.css';
 </html>
 ```
 
-- [ ] **Step 7: Install and build**
+- [x] **Step 7: Install and build**
 
 Run: `npm install && npm run build`
 Expected: exits 0, creates `dist/index.html` containing `<h1>Heartwood</h1>`.
@@ -167,7 +167,7 @@ Expected: exits 0, creates `dist/index.html` containing `<h1>Heartwood</h1>`.
 Verify: `grep -q "Heartwood" dist/index.html && echo OK`
 Expected output: `OK`
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add package.json astro.config.mjs tsconfig.json .gitignore src/styles/tokens.css src/pages/index.astro package-lock.json
@@ -193,7 +193,7 @@ git commit -m "chore: scaffold Astro project with design tokens and self-hosted 
   - `Footer.astro` — no props, no slots.
   - `PlaceholderBlock.astro` — props `{ label: string, note?: string }`, renders a dashed-border block. Later tasks (Landing, Download) use `<PlaceholderBlock label="..." note="..." />`.
 
-- [ ] **Step 1: Write `src/components/Nav.astro`**
+- [x] **Step 1: Write `src/components/Nav.astro`**
 
 ```astro
 <nav class="nav">
@@ -244,7 +244,7 @@ git commit -m "chore: scaffold Astro project with design tokens and self-hosted 
 </style>
 ```
 
-- [ ] **Step 2: Write `src/components/Footer.astro`**
+- [x] **Step 2: Write `src/components/Footer.astro`**
 
 ```astro
 <footer class="footer">
@@ -276,7 +276,7 @@ git commit -m "chore: scaffold Astro project with design tokens and self-hosted 
 </style>
 ```
 
-- [ ] **Step 3: Write `src/components/PlaceholderBlock.astro`**
+- [x] **Step 3: Write `src/components/PlaceholderBlock.astro`**
 
 ```astro
 ---
@@ -313,7 +313,7 @@ const { label, note } = Astro.props as Props;
 </style>
 ```
 
-- [ ] **Step 4: Write `src/layouts/BaseLayout.astro`**
+- [x] **Step 4: Write `src/layouts/BaseLayout.astro`**
 
 ```astro
 ---
@@ -344,7 +344,7 @@ const { title } = Astro.props as Props;
 </html>
 ```
 
-- [ ] **Step 5: Wire the temporary index page through `BaseLayout` to verify composition**
+- [x] **Step 5: Wire the temporary index page through `BaseLayout` to verify composition**
 
 Replace `src/pages/index.astro` contents:
 
@@ -358,14 +358,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 ```
 
-- [ ] **Step 6: Build and verify nav/footer render**
+- [x] **Step 6: Build and verify nav/footer render**
 
 Run: `npm run build`
 
 Verify: `grep -q "Local-first. No accounts, no telemetry, no cloud." dist/index.html && grep -q "nav__wordmark" dist/index.html && echo OK`
 Expected output: `OK`
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add src/layouts/BaseLayout.astro src/components/Nav.astro src/components/Footer.astro src/components/PlaceholderBlock.astro src/pages/index.astro
@@ -385,7 +385,7 @@ git commit -m "feat: add shared layout, nav, footer, and placeholder component"
 - Consumes: `tokens.css` variables from Task 1.
 - Produces: `prepareCapture(raw: string): string | null` from `src/lib/greenhouseCapture.js` — exported as a named export, used by `GreenhouseDemo.astro`'s client script and by the test file. `GreenhouseDemo.astro` — no props, self-contained; Task 4 (Landing) consumes it as `<GreenhouseDemo />`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/greenhouseCapture.test.js
@@ -410,12 +410,12 @@ describe('prepareCapture', () => {
 });
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run: `npx vitest run tests/greenhouseCapture.test.js`
 Expected: FAIL — `Cannot find module '../src/lib/greenhouseCapture.js'`
 
-- [ ] **Step 3: Write minimal implementation**
+- [x] **Step 3: Write minimal implementation**
 
 ```js
 // src/lib/greenhouseCapture.js
@@ -426,12 +426,12 @@ export function prepareCapture(raw) {
 }
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 Run: `npx vitest run tests/greenhouseCapture.test.js`
 Expected: PASS (3 tests)
 
-- [ ] **Step 5: Write `src/components/GreenhouseDemo.astro`**
+- [x] **Step 5: Write `src/components/GreenhouseDemo.astro`**
 
 No `<form>` wrapper — without JavaScript, pressing Enter in a bare `<input>` does nothing, so the widget is inert but never broken. With JavaScript, it becomes interactive.
 
@@ -512,12 +512,12 @@ No `<form>` wrapper — without JavaScript, pressing Enter in a bare `<input>` d
 </style>
 ```
 
-- [ ] **Step 6: Build to confirm the island compiles**
+- [x] **Step 6: Build to confirm the island compiles**
 
 Run: `npm run build`
 Expected: exits 0 (Astro bundles the component's `<script>` even though it's not yet used on a page).
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add src/lib/greenhouseCapture.js tests/greenhouseCapture.test.js src/components/GreenhouseDemo.astro
@@ -535,7 +535,7 @@ git commit -m "feat: add Greenhouse capture logic and interactive demo island"
 - Consumes: `BaseLayout` (Task 2), `GreenhouseDemo` (Task 3), `PlaceholderBlock` (Task 2).
 - Produces: final Landing page — no other task depends on its internals.
 
-- [ ] **Step 1: Write the final `src/pages/index.astro`**
+- [x] **Step 1: Write the final `src/pages/index.astro`**
 
 ```astro
 ---
@@ -641,7 +641,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock.astro';
 </style>
 ```
 
-- [ ] **Step 2: Build and verify required content is present**
+- [x] **Step 2: Build and verify required content is present**
 
 Run: `npm run build`
 
@@ -661,7 +661,7 @@ grep -qi "mobile app" dist/index.html && echo FAIL || echo OK
 ```
 Expected output: `OK` for both.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/pages/index.astro
@@ -679,7 +679,7 @@ git commit -m "feat: build final Landing page"
 - Consumes: `BaseLayout` (Task 2).
 - Produces: nothing consumed by later tasks.
 
-- [ ] **Step 1: Write `src/pages/pricing.astro`**
+- [x] **Step 1: Write `src/pages/pricing.astro`**
 
 ```astro
 ---
@@ -763,7 +763,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </style>
 ```
 
-- [ ] **Step 2: Build and verify content**
+- [x] **Step 2: Build and verify content**
 
 Run: `npm run build`
 
@@ -778,7 +778,7 @@ grep -qi "mobile" dist/pricing/index.html && echo FAIL || echo OK
 ```
 Expected output: `OK` for all four checks.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/pages/pricing.astro
@@ -796,7 +796,7 @@ git commit -m "feat: build Pricing page"
 - Consumes: `BaseLayout` (Task 2).
 - Produces: nothing consumed by later tasks.
 
-- [ ] **Step 1: Write `src/pages/about.astro`**
+- [x] **Step 1: Write `src/pages/about.astro`**
 
 The mission statement must be reproduced verbatim.
 
@@ -860,7 +860,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </style>
 ```
 
-- [ ] **Step 2: Build and verify the mission statement is present verbatim**
+- [x] **Step 2: Build and verify the mission statement is present verbatim**
 
 Run: `npm run build`
 
@@ -873,7 +873,7 @@ grep -q "Attention doesn't move in a straight line" dist/about/index.html \
 ```
 Expected output: `OK`
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/pages/about.astro
@@ -891,7 +891,7 @@ git commit -m "feat: build About page with verbatim mission statement and heartw
 - Consumes: `BaseLayout` (Task 2), `PlaceholderBlock` (Task 2).
 - Produces: nothing consumed by later tasks.
 
-- [ ] **Step 1: Write `src/pages/download.astro`**
+- [x] **Step 1: Write `src/pages/download.astro`**
 
 ```astro
 ---
@@ -959,7 +959,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock.astro';
 </style>
 ```
 
-- [ ] **Step 2: Build and verify content**
+- [x] **Step 2: Build and verify content**
 
 Run: `npm run build`
 
@@ -973,7 +973,7 @@ grep -q "macOS" dist/download/index.html \
 ```
 Expected output: `OK`
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/pages/download.astro
@@ -993,7 +993,7 @@ git commit -m "feat: build Download page"
 - Consumes: all components/pages from Tasks 1–7.
 - Produces: nothing consumed by later tasks (final polish task).
 
-- [ ] **Step 1: Add explicit stack rules to `src/pages/pricing.astro`**
+- [x] **Step 1: Add explicit stack rules to `src/pages/pricing.astro`**
 
 Add to the `<style>` block:
 
@@ -1003,7 +1003,7 @@ Add to the `<style>` block:
   }
 ```
 
-- [ ] **Step 2: Add explicit stack rules to `src/pages/download.astro`**
+- [x] **Step 2: Add explicit stack rules to `src/pages/download.astro`**
 
 Add to the `<style>` block:
 
@@ -1013,19 +1013,19 @@ Add to the `<style>` block:
   }
 ```
 
-- [ ] **Step 3: Verify keyboard focus is visible on every interactive element**
+- [x] **Step 3: Verify keyboard focus is visible on every interactive element**
 
 Run: `npm run dev`, then in a browser tab through: Nav links → Greenhouse demo input → Landing CTA buttons → Pricing page (no interactive elements besides nav) → Download page's three (inert) links → Footer.
 
 Expected: every focused element shows a visible outline (from the global `:focus-visible` rule in `tokens.css`). No element is focusable-but-invisible.
 
-- [ ] **Step 4: Verify JS-disabled fallback**
+- [x] **Step 4: Verify JS-disabled fallback**
 
 Run: `npm run build && npm run preview`, then load the site with JavaScript disabled in the browser (e.g. Chrome DevTools → Settings → Debugger → Disable JavaScript).
 
 Expected: all four pages render full content and are navigable; the Greenhouse demo input is visible but inert (no crash, no visual breakage, per Task 3 Step 5's no-`<form>` design).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/pages/pricing.astro src/pages/download.astro
@@ -1043,7 +1043,7 @@ git commit -m "fix: stack pricing and download cards on narrow viewports"
 - Consumes: the built `dist/` output from all previous tasks.
 - Produces: nothing consumed by later tasks (final gate).
 
-- [ ] **Step 1: Write `scripts/verify-constraints.sh`**
+- [x] **Step 1: Write `scripts/verify-constraints.sh`**
 
 ```bash
 #!/usr/bin/env bash
@@ -1091,17 +1091,17 @@ fi
 echo "Constraint verification PASSED"
 ```
 
-- [ ] **Step 2: Make it executable and run it**
+- [x] **Step 2: Make it executable and run it**
 
 Run: `chmod +x scripts/verify-constraints.sh && ./scripts/verify-constraints.sh`
 Expected output: `Constraint verification PASSED`
 
-- [ ] **Step 3: Run the unit test suite one more time as part of the same gate**
+- [x] **Step 3: Run the unit test suite one more time as part of the same gate**
 
 Run: `npm run test`
 Expected: 3 passing tests (from Task 3).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add scripts/verify-constraints.sh
