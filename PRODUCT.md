@@ -20,7 +20,9 @@ Heartwood is a local-first, Pomodoro-style focus timer for macOS, Windows, and L
 
 ## Positioning
 
-The distinguishing mechanism is the **Greenhouse**: mid-session, an intrusive thought gets typed and set down (not dismissed, not acted on) without breaking focus. This is a concrete interaction, not an abstract "mindfulness" claim — the Landing page demonstrates it live. The second pillar: everything stays on the user's machine — no accounts, no telemetry, no ads, no cloud. This is a core promise, not a footnote or a checkbox in a feature list.
+The lead claim is flow: staying immersed in deep work without a wandering thought forcing a choice between losing the thought and losing the session. The distinguishing mechanism is the **Greenhouse**: mid-session, an intrusive thought gets typed and set down (not dismissed, not acted on) without breaking focus. This is a concrete interaction, not an abstract "mindfulness" claim — the Landing page demonstrates it live.
+
+Local-first — no accounts, no telemetry, no ads, no cloud — remains a real, durable fact about the product (user-confirmed, 2026-08-27), but is no longer the lead claim: it's a features-list bullet and a footer line, present on every page, never a dedicated full-bleed section. The user judged that over-emphasizing it risked reading as a limitation (no sync, no mobile) dressed as a virtue, for an audience that may not be primarily privacy-motivated.
 
 ## Operating Context
 
@@ -40,7 +42,7 @@ Four pages only: Landing, Pricing, About, Download. No blog, no changelog, no ba
 
 - Name: Heartwood. Wordmark is type-only (no icon/logomark for v1), set in the display serif.
 - Visual identity is sourced from the sibling `heartwood-app` desktop app's real design-token system, not invented independently for the site. The app ships 7 named theme families (Sunlit, Cozy, Quiet Natural, Coastal Air, Night Walk, Moon Garden, Graphite), each with light/dark variants and a shared semantic token set (`--app-background`, `--surface`, `--text`, `--text-muted`, `--border`, `--flow-accent`, `--break-accent`, `--danger`, etc.) plus a self-hosted display font, **Young Serif** (not Fraunces — the site's prior font choice predates this discovery and is being retired).
-- Decision (user-confirmed): the site commits to one fixed theme rather than a live switcher — **Cozy**, light mode (`#f5eeea` background, `#8a4b19` walnut-brown accent) — as its permanent identity. This is the closest existing app theme to the original marketing spec's "warm paper + heartwood brown" direction, so it reads as a refinement of the site's original intent rather than a swap.
+- Decision (user-confirmed): the site commits to one fixed theme rather than a live switcher — **Night Walk**, dark mode (`#141922` navy background, `#e9a467` amber accent) — as its permanent identity. Superseded an earlier Cozy/light choice; the user preferred Night Walk's moodier, more immersive read, which also reinforces the flow-state positioning (see Positioning below) better than the original warm-paper direction did.
 - Tone: quiet, warm, a little wooded. Restraint over polish.
 - Visual defaults to avoid: purple gradients, Inter typeface, nested card soup, three-icon hero rows, stock photography, wood-grain skeuomorphism, decorative icon rows.
 - Recurring motif (from original spec, still binding): concentric tree-ring / growth-ring line work, used sparingly as a section divider or background accent — not decorative wallpaper.
@@ -54,7 +56,7 @@ Four pages only: Landing, Pricing, About, Download. No blog, no changelog, no ba
 ## Product Principles
 
 1. The Greenhouse mechanic is shown, not described — a real interactive demo beats a screenshot or a feature bullet every time.
-2. Local-first is a headline claim, stated plainly on its own line — never buried in body copy or reduced to a footnote.
+2. Flow/immersion is the headline claim, demonstrated via the Greenhouse mechanic. Local-first is real and stays visible on every page (features list, footer) but is deliberately not a dedicated section — see Positioning.
 3. Never invent proof. A clearly labeled placeholder is always preferable to a fabricated testimonial, screenshot, or metric.
 4. Visual identity is inherited from the real app, not designed in isolation — the site and the app must feel like the same product.
 5. Restraint over polish: one motif (tree rings), used meaningfully and sparingly, beats a decorated page.

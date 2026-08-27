@@ -1,6 +1,9 @@
-/* Cozy/Light — one of heartwood-app's 7 real theme families (src/app.css),
- * adopted verbatim rather than invented for the site. See PRODUCT.md's
- * Brand Commitments: the app is the visual authority, not this file. */
+/* Night Walk/Dark — one of heartwood-app's 7 real theme families
+ * (src/app.css), adopted verbatim rather than invented for the site. See
+ * PRODUCT.md's Brand Commitments: the app is the visual authority, not
+ * this file. Unlike Cozy, Night Walk's focus-ring and flow-accent are
+ * genuinely different colors (blue vs amber) — --color-focus exists
+ * because of that, not for symmetry. */
 @font-face {
   font-family: 'Young Serif';
   font-style: normal;
@@ -12,17 +15,18 @@
 }
 
 :root {
-  --color-bg: #F5EEEA;
-  --color-bg-alt: #F8F2EE;
-  --color-surface: #FFFDFB;
-  --color-flow-surface: #F7E7DA;
-  --color-break-surface: #E7F0E8;
-  --color-ink: #342821;
-  --color-ink-muted: #6C5D54;
-  --color-accent: #8A4B19;
-  --color-accent-secondary: #356345;
-  --color-border: #D8C9C0;
-  --color-ring: #CBB6A3;
+  --color-bg: #141922;
+  --color-bg-alt: #262E3B;
+  --color-surface: #1D2430;
+  --color-flow-surface: #342B24;
+  --color-break-surface: #22342E;
+  --color-ink: #F0F3F8;
+  --color-ink-muted: #B2BBC8;
+  --color-accent: #E9A467;
+  --color-accent-secondary: #73C991;
+  --color-border: #414B5B;
+  --color-focus: #79B8E8;
+  --color-ring: #957860;
 
   /* Display headlines only — self-hosted from the app's own font file, not
    * a web font search. Body/controls stay on the system stack below: zero
@@ -51,10 +55,10 @@
 
   --breakpoint-stack: 700px;
 
-  --shadow-lifted: 0 20px 40px -20px rgba(138, 75, 25, 0.35), 0 4px 10px -4px rgba(138, 75, 25, 0.18);
-  --shadow-card: 0 8px 24px -8px rgba(52, 40, 33, 0.15);
+  --shadow-lifted: 0 20px 40px -20px rgba(233, 164, 103, 0.25), 0 4px 10px -4px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 8px 24px -8px rgba(0, 0, 0, 0.5);
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -98,7 +102,7 @@ a { color: var(--color-accent); }
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 

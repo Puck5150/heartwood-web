@@ -27,7 +27,7 @@ check_absent "10x"
 check_absent "testimonial"
 
 # Required content per page
-check_present "No accounts. No telemetry. No ads. No cloud." dist/index.html
+check_present "Flow is the point." dist/index.html
 check_present "Real session recording goes here" dist/index.html
 check_present "\\\$19 one-time" dist/pricing/index.html
 check_present "No account required." dist/pricing/index.html

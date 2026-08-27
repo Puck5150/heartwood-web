@@ -25,10 +25,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     />
   </section>
 
-  <section class="local-first reveal">
-    <div class="local-first__inner">
-      <h2>Everything stays on your machine.</h2>
-      <p>No accounts. No telemetry. No ads. No cloud. Heartwood runs locally and stores everything you write locally — full stop.</p>
+  <section class="flow reveal">
+    <div class="flow__inner">
+      <h2>Flow is the point.</h2>
+      <p>Deep focus doesn't survive being managed — it survives being protected. Heartwood gets out of the way: one visible timer, one place to set a thought down, nothing else competing for your eyes while you work.</p>
     </div>
   </section>
 
@@ -39,6 +39,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <li><strong>Touch grass</strong> — a deliberate extended-break button, for when focus runs dry.</li>
       <li><strong>Markdown session notes</strong> — write plainly, format if you want to.</li>
       <li><strong>Versioned history</strong> — everything you've ever written, kept.</li>
+      <li><strong>Local-first</strong> — everything stays on your machine, no accounts slowing you down.</li>
     </ul>
   </section>
 
@@ -79,19 +80,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     padding-top: 0;
     padding-bottom: var(--space-6);
   }
-  .local-first {
-    background: var(--color-break-surface);
+  .flow {
+    background: var(--color-flow-surface);
     padding: var(--space-7) var(--space-4);
   }
-  .local-first__inner {
+  .flow__inner {
     max-width: 40rem;
     margin: 0 auto;
     text-align: center;
   }
-  .local-first h2 {
+  .flow h2 {
     font-size: var(--text-h2);
   }
-  .local-first p {
+  .flow p {
     max-width: 52ch;
     margin-inline: auto;
   }
