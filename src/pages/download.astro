@@ -7,7 +7,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock.astro';
     <h1>Download Heartwood</h1>
     <p>Local-first. No accounts, no telemetry, no cloud.</p>
 
-    <div class="download__grid">
+    <div class="download__grid reveal">
       <article class="download__card">
         <h2>macOS</h2>
         <span class="download__button" role="note">Coming soon</span>
@@ -22,10 +22,12 @@ import PlaceholderBlock from '../components/PlaceholderBlock.astro';
       </article>
     </div>
 
-    <PlaceholderBlock
-      label="System requirements go here"
-      note="Minimum OS versions and hardware requirements will be listed once builds are finalized."
-    />
+    <div class="reveal">
+      <PlaceholderBlock
+        label="System requirements go here"
+        note="Minimum OS versions and hardware requirements will be listed once builds are finalized."
+      />
+    </div>
   </section>
 </BaseLayout>
 
@@ -53,7 +55,8 @@ import PlaceholderBlock from '../components/PlaceholderBlock.astro';
     border: 1px solid var(--color-border);
     border-radius: 6px;
     padding: var(--space-4) var(--space-3);
-    background: var(--color-bg-alt);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
   }
   .download__card h2 {
     font-size: 1.25rem;

@@ -10,9 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "astro": "^4.15.0",
-    "@fontsource/fraunces": "^5.0.0",
-    "@fontsource/public-sans": "^5.0.0"
+    "astro": "^4.15.0"
   },
   "devDependencies": {
     "vitest": "^2.0.0"

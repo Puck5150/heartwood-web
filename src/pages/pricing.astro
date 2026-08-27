@@ -6,7 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1>Pricing</h1>
 
     <div class="plans">
-      <article class="plan">
+      <article class="plan reveal">
         <h2>Free</h2>
         <p class="plan__price">$0</p>
         <ul>
@@ -17,7 +17,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="plan__note">No account required.</p>
       </article>
 
-      <article class="plan plan--full">
+      <article class="plan plan--full reveal">
         <p class="plan__badge">Early adopter</p>
         <h2>Full version</h2>
         <p class="plan__price">$19 one-time</p>
@@ -58,11 +58,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border: 1px solid var(--color-border);
     border-radius: 6px;
     padding: var(--space-5) var(--space-4);
-    background: var(--color-bg-alt);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
   }
   .plan--full {
     position: relative;
-    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg-alt));
+    background: var(--color-flow-surface);
     border-color: var(--color-accent);
     box-shadow: var(--shadow-lifted);
   }
